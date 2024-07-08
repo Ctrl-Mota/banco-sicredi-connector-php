@@ -28,9 +28,7 @@ final class SicrediCobrancaTest extends TestCase
      */
     public function test_create_boleto()
     {
-        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
-        $dotenv->load();
-        $API_KEY = $_ENV['API_KEY'];
+        $API_KEY = getenv('API_KEY');
         // AVISO:
         // estes testes não fazem sentido se não forem alterados
         // com dados possíveis de boletos e de correntista
@@ -154,9 +152,7 @@ final class SicrediCobrancaTest extends TestCase
      */
     public function test_fail_validation_on_create_boleto()
     {
-        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
-        $dotenv->load();
-        $API_KEY = $_ENV['API_KEY'];
+        $API_KEY = getenv('API_KEY');
         $apiUrl = "https://api-parceiro.sicredi.com.br/sb";
         $banco = new SicrediCobranca(
             new CredencialsManager(
