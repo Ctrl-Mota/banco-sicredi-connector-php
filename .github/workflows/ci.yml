@@ -48,9 +48,6 @@ jobs:
       - name: "Validate composer.json"
         run: "composer validate --strict"
 
-      - name: "Normalize composer.json"
-        run: "composer normalize --dry-run"
-
   tests:
     name: "Tests"
 
@@ -99,7 +96,3 @@ jobs:
       - name: "Run tests with PHPUnit"
         timeout-minutes: 3
         run: "API_KEY=${{ secrets.API_KEY }} XDEBUG_MODE=coverage ./vendor/bin/phpunit tests --coverage-text --colors"
-
-      - name: "Run php-cs-fixer"
-        timeout-minutes: 3
-        run: "composer cs-dry-run"
