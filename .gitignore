@@ -1,0 +1,11 @@
+/.buildpath
+/composer.phar
+/vendor/
+/private
+.env
+*~
+*.pdf
+/.settings
+sicredi-oauth-token.txt
+docker-compose.yml
+Dockerfile
