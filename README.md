@@ -3,6 +3,10 @@
 
 Conecte o Banco Sicredi com seu projeto PHP 
 ===========
+![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+![GitHub CI](https://github.com/Ctrl-Mota/banco-sicredi-connector-php/actions/workflows/ci.yml/badge.svg)
+
+
 
 Abstração de comunicação rest com API v3.3 fornecida pelo Banco Sicredi (748).
 
