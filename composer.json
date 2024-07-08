@@ -1,7 +1,6 @@
 {
 	"name" : "crtlmota/banco-sicredi-connector",
 	"type" : "package",
-	"version": "1.0.0",
 	"authors" : [
 		{
             "name": "Ctrl-Mota",
