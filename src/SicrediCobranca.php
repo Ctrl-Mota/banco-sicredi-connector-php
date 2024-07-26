@@ -36,10 +36,6 @@ class SicrediCobranca extends HttpService
 
         $response = $this->post("/cobranca/boleto/v1/boletos", $boleto);
 
-        // $boleto->setNossoNumero($response['nossoNumero']);
-        // $boleto->setCodigoBarras($response['codigoBarras']);
-        // $boleto->setLinhaDigitavel($response['linhaDigitavel']);
-
         return $response;
     }
 
@@ -50,7 +46,6 @@ class SicrediCobranca extends HttpService
      */
     public function getBoleto(string $nossoNumero): array
     {
-        // var_dump($nossoNumero);
         return $this->get("/cobranca/boleto/v1/boletos", [
                 'nossoNumero' => $nossoNumero,
                 'codigoBeneficiario' => $this->credencialsManager->getCodigoBeneficiario()
@@ -269,7 +264,6 @@ class SicrediCobranca extends HttpService
             "urlStatus" => "ATIVO",
             "contratoStatus" => "ATIVO",
         ];
-        Utils::prettyVarDump($payload);
 
         //Verifica se a URL do webhook é válida
         if (!filter_var($webhookUrl, FILTER_VALIDATE_URL)) {
@@ -323,7 +317,6 @@ class SicrediCobranca extends HttpService
                 $existentWebhook['url'] = $webhookUrl;
                 $existentWebhook['urlStatus'] = "ATIVO";
                 $delete = $this->put($url, $existentWebhook);
-                //  Utils::prettyVarDump($delete);
 
                 return true;
             }
@@ -351,7 +344,6 @@ class SicrediCobranca extends HttpService
                 $existentWebhook['contratoStatus'] = "INATIVO";
                 $existentWebhook['status'] = "INATIVO";
                 $delete = $this->put($url, $existentWebhook);
-                //  Utils::prettyVarDump($delete);
 
                 return true;
             }

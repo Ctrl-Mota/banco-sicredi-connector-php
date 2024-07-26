@@ -68,8 +68,6 @@ class HttpService
         }
 
         $curl = $this->intanceRequest($url, $headers);
-        // Utils::prettyVarDump($headers);
-        // Utils::prettyVarDump($body);
 
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($body));
@@ -98,10 +96,8 @@ class HttpService
 
         $curl = $this->intanceRequest($url, $headers);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
-        // Utils::prettyVarDump(json_decode(json_encode($body), true));
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
-        // var_dump(curl_getinfo($curl, CURLOPT_HTTPHEADER));
 
         return $this->handleResponse($curl, $headers);
     }
@@ -114,7 +110,6 @@ class HttpService
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
-        // var_dump(curl_getinfo($curl, CURLOPT_HTTPHEADER));
 
         return $this->handleResponse($curl,$headers);
     }
@@ -124,10 +119,8 @@ class HttpService
 
         $curl = $this->intanceRequest($url, $headers);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
-        // Utils::prettyVarDump(json_decode(json_encode($body), true));
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
-        // var_dump(curl_getinfo($curl, CURLOPT_HTTPHEADER));
 
         return $this->handleResponse($curl, $headers);
     }
